@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a meal from Our Kind Kitchen. We provide gourmet home-cooked meals to individuals and families facing medical challenges, new parenthood, or difficult life transitions.">
+  <title>Request a Meal | Our Kind Kitchen</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/forms.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/our-kind-kitchen_icon-color.png">
+</head>
+<body>
+
+  <!-- Navigation Component -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero hero-overlay hero-request">
+    <div class="container">
+      <h1>Request a Meal</h1>
+      <p>We're here to help during challenging times</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section>
+    <div class="container" style="max-width: 1200px;">
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+
+        <!-- Left Column - Info -->
+        <div>
+          <h2>Who We Serve</h2>
+          <p>We provide gourmet, home-cooked meals to individuals and families facing:</p>
+          <ul style="margin: 1.5rem 0; padding-left: 1.5rem; line-height: 2;">
+            <li><strong>Medical Emergencies</strong> or recovery from surgery/treatment</li>
+            <li><strong>New Parenthood</strong> - the "fourth trimester" and beyond</li>
+            <li><strong>Senior Support</strong> for elderly neighbors who may be lonely or struggling with mobility</li>
+            <li><strong>Difficult Life Transitions</strong> where a little extra care is needed</li>
+          </ul>
+
+          <h3 class="mt-lg">How It Works</h3>
+          <div style="margin: 1.5rem 0;">
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="width: 40px; height: 40px; background-color: var(--color-primary-maroon); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-heading); font-size: 1.25rem;">1</div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Submit a Request</h4>
+                <p style="margin: 0;">Fill out our confidential form</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="width: 40px; height: 40px; background-color: var(--color-primary-maroon); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-heading); font-size: 1.25rem;">2</div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Coordination</h4>
+                <p style="margin: 0;">Our team confirms dietary needs and delivery timing</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <div style="width: 40px; height: 40px; background-color: var(--color-primary-maroon); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-heading); font-size: 1.25rem;">3</div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Delivery with Care</h4>
+                <p style="margin: 0;">Fresh meal delivered to your door—always free</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mt-lg" style="background-color: var(--color-peach); border: none;">
+            <h4 style="color: var(--color-dark); margin-bottom: 0.5rem;">Our Promise</h4>
+            <p style="margin: 0; color: var(--color-dark);">Your privacy is important to us. All requests are handled with the utmost discretion and respect.</p>
+          </div>
+        </div>
+
+        <!-- Right Column - Form -->
+        <div>
+          <div class="form-toggle-buttons">
+            <button type="button" class="form-toggle-btn active" data-form="myself">Request for Myself</button>
+            <button type="button" class="form-toggle-btn" data-form="nominate">Nominate a Neighbor</button>
+          </div>
+
+          <form name="meal-request" method="POST" netlify netlify-honeypot="bot-field" class="form">
+            <input type="hidden" name="form-name" value="meal-request">
+            <input type="hidden" name="request-type" id="requestType" value="myself">
+
+            <!-- Honeypot -->
+            <div class="form-honeypot">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </div>
+
+            <div class="form-success" id="formSuccess">
+              <div class="form-success-icon">✓</div>
+              <h3>Thank You!</h3>
+              <p>We've received your request and will be in touch soon.</p>
+            </div>
+
+            <p class="form-required-note">* indicates required field</p>
+
+            <div class="form-group">
+              <label for="name" class="form-label required">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label required">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cell" class="form-label required">Cell Phone</label>
+              <input type="tel" id="cell" name="cell" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="address" class="form-label required">Home Address</label>
+              <textarea id="address" name="address" class="form-textarea" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="numPeople" class="form-label required">Number of people needing meals</label>
+              <input type="number" id="numPeople" name="numPeople" class="form-input" min="1" required>
+            </div>
+
+            <div class="form-group">
+              <label for="allergies" class="form-label">Any allergies or dietary restrictions?</label>
+              <textarea id="allergies" name="allergies" class="form-textarea" rows="3" placeholder="Please list any allergies, dietary restrictions, or food preferences"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="delivery" class="form-label required">Method of delivery</label>
+              <select id="delivery" name="delivery" class="form-select" required>
+                <option value="">Select delivery method...</option>
+                <option value="home-delivery">Home Delivery</option>
+                <option value="pickup">Pickup in Yardley</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Would you appreciate a visit from our volunteer?</label>
+              <div class="form-radio-group">
+                <div class="form-radio">
+                  <input type="radio" id="visitYes" name="visit" value="yes">
+                  <label for="visitYes">Yes, I'd appreciate a visit</label>
+                </div>
+                <div class="form-radio">
+                  <input type="radio" id="visitNo" name="visit" value="no" checked>
+                  <label for="visitNo">No, just the meal delivery is fine</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary form-submit">Submit Request</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section-alt">
+    <div class="container text-center">
+      <h2>Have Questions?</h2>
+      <p class="text-lg max-w-700 mb-2">We're here to help. If you have any questions about requesting a meal, please don't hesitate to reach out.</p>
+      <div class="cta-container">
+        <a href="about.html" class="btn btn-outline">Learn More About Us</a>
+        <a href="volunteer.html" class="btn btn-secondary">Volunteer With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Component -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

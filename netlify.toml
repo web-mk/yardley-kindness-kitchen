@@ -1,0 +1,62 @@
+# Netlify Configuration for Our Kind Kitchen
+
+[build]
+  # Directory with Netlify Functions
+  functions = "functions"
+
+  # Publish directory (root of site)
+  publish = "."
+
+# Form Settings
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = false
+  minify = false
+
+[build.processing.js]
+  bundle = false
+  minify = false
+
+[build.processing.html]
+  pretty_urls = true
+
+# Form Notifications
+# Configure in Netlify UI: Site Settings > Forms > Form notifications
+
+# Redirects for API endpoints (Stripe functions)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache Control for Assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Environment Variables Required:
+# STRIPE_SECRET_KEY - Your Stripe secret key (test or live)
+# STRIPE_PUBLISHABLE_KEY - Your Stripe publishable key (test or live)

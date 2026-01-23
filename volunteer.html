@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Volunteer with Our Kind Kitchen. Cook meals, deliver to neighbors, or organize group volunteering opportunities.">
+  <title>Volunteer With Us | Our Kind Kitchen</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/forms.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/our-kind-kitchen_icon-color.png">
+</head>
+<body>
+
+  <!-- Navigation Component -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero hero-overlay hero-volunteer">
+    <div class="container">
+      <h1>Volunteer With Us</h1>
+      <p>Make a difference in your community through the gift of a home-cooked meal</p>
+    </div>
+  </section>
+
+  <!-- Volunteer Options -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-lg">
+        <h2>How You Can Help</h2>
+        <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;">Choose the volunteer opportunity that fits your schedule and interests.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <a href="#cook" class="card" style="text-decoration: none; color: inherit;">
+          <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-utensils" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
+          <h3>Cook With Us</h3>
+          <p>Join our kitchen volunteers to prepare gourmet meals together</p>
+        </a>
+
+        <a href="#deliver" class="card" style="text-decoration: none; color: inherit;">
+          <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-car" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
+          <h3>Deliver For Us</h3>
+          <p>Help deliver meals to neighbors in need across Lower Bucks County</p>
+        </a>
+
+        <a href="#group" class="card" style="text-decoration: none; color: inherit;">
+          <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-user-friends" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
+          <h3>Volunteer as a Group</h3>
+          <p>Perfect for Bar/Bat Mitzvahs and community service projects</p>
+        </a>
+
+        <a href="#corporate" class="card" style="text-decoration: none; color: inherit;">
+          <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-building" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
+          <h3>Corporate Volunteering</h3>
+          <p>Team-building through meaningful community service</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cook With Us Section -->
+  <section id="cook" class="section-alt">
+    <div class="container" style="max-width: 1200px;">
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+        <div>
+          <h2>Cook With Us</h2>
+          <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Join our vibrant community of volunteers in the kitchen! Our cooking sessions are a wonderful opportunity to meet new people, learn new recipes, and make a tangible difference in someone's life.</p>
+
+          <h4>What to Expect:</h4>
+          <ul style="margin: 1rem 0 1.5rem; padding-left: 1.5rem; line-height: 2;">
+            <li>2-3 hour cooking sessions</li>
+            <li>All ingredients and equipment provided</li>
+            <li>Work alongside experienced volunteers</li>
+            <li>Prepare 10-15 gourmet meals per session</li>
+            <li>Learn new cooking techniques and recipes</li>
+          </ul>
+
+          <img src="assets/images/photos/589210477_1177257561210999_6583424379757085871_n.jpg" alt="Volunteers cooking" class="img-rounded" style="width: 100%; margin-top: 2rem;">
+        </div>
+
+        <div>
+          <form name="cook-volunteer" method="POST" netlify netlify-honeypot="bot-field" class="form">
+            <input type="hidden" name="form-name" value="cook-volunteer">
+            <div class="form-honeypot">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </div>
+
+            <div class="form-success" id="formSuccess">
+              <div class="form-success-icon">✓</div>
+              <h3>Thank You!</h3>
+              <p>We've received your volunteer application and will be in touch soon.</p>
+            </div>
+
+            <h3>Sign Up to Cook</h3>
+            <p class="form-required-note">* indicates required field</p>
+
+            <div class="form-group">
+              <label for="cookName" class="form-label required">Name</label>
+              <input type="text" id="cookName" name="name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cookEmail" class="form-label required">Email</label>
+              <input type="email" id="cookEmail" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cookCell" class="form-label required">Cell Phone</label>
+              <input type="tel" id="cookCell" name="cell" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cookAddress" class="form-label required">Home Address</label>
+              <textarea id="cookAddress" name="address" class="form-textarea" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cookNumVolunteers" class="form-label required">Number of volunteers</label>
+              <input type="number" id="cookNumVolunteers" name="numVolunteers" class="form-input" min="1" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cookVolunteerNames" class="form-label">Names of volunteers (if applicable)</label>
+              <textarea id="cookVolunteerNames" name="volunteerNames" class="form-textarea" rows="3" placeholder="Please list all volunteer names"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cookSession" class="form-label required">Preferred session</label>
+              <select id="cookSession" name="session" class="form-select" required>
+                <option value="">Select a session...</option>
+                <option value="weekday-morning">Weekday Morning</option>
+                <option value="weekday-afternoon">Weekday Afternoon</option>
+                <option value="weekday-evening">Weekday Evening</option>
+                <option value="weekend">Weekend</option>
+                <option value="flexible">I'm Flexible</option>
+              </select>
+            </div>
+
+            <div class="form-waiver">
+              <p class="waiver-text"><strong>Volunteer Waiver:</strong> I understand and agree that I am volunteering my services to Our Kind Kitchen at my own risk. I release Our Kind Kitchen, its officers, directors, and volunteers from any liability for injuries or damages that may occur during my volunteer service.</p>
+              <div class="waiver-checkbox">
+                <input type="checkbox" id="cookWaiver" name="waiver" required>
+                <label for="cookWaiver">I have read and agree to the volunteer waiver *</label>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary form-submit">Submit Application</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliver For Us Section -->
+  <section id="deliver">
+    <div class="container" style="max-width: 1200px;">
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+        <div>
+          <h2>Deliver For Us</h2>
+          <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Our delivery volunteers are the bridge between our kitchen and the families we serve. This is a flexible opportunity that typically takes 30-60 minutes.</p>
+
+          <h4>Requirements:</h4>
+          <ul style="margin: 1rem 0 1.5rem; padding-left: 1.5rem; line-height: 2;">
+            <li>Valid driver's license and personal vehicle</li>
+            <li>Auto insurance</li>
+            <li>Ability to lift and carry meals</li>
+            <li>GPS/smartphone for navigation</li>
+            <li>Willingness to cover your own fuel costs</li>
+          </ul>
+
+          <h4>What You'll Do:</h4>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem; line-height: 2;">
+            <li>Pick up prepared meals from our kitchen</li>
+            <li>Deliver to 1-3 families in the area</li>
+            <li>Optional: brief friendly visit with recipients</li>
+          </ul>
+        </div>
+
+        <div>
+          <form name="deliver-volunteer" method="POST" netlify netlify-honeypot="bot-field" class="form">
+            <input type="hidden" name="form-name" value="deliver-volunteer">
+            <div class="form-honeypot">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </div>
+
+            <div class="form-success" id="deliverFormSuccess">
+              <div class="form-success-icon">✓</div>
+              <h3>Thank You!</h3>
+              <p>We've received your delivery driver application.</p>
+            </div>
+
+            <h3>Sign Up to Deliver</h3>
+            <p class="form-required-note">* indicates required field</p>
+
+            <div class="form-group">
+              <label for="deliverName" class="form-label required">Name</label>
+              <input type="text" id="deliverName" name="name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="deliverEmail" class="form-label required">Email</label>
+              <input type="email" id="deliverEmail" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="deliverCell" class="form-label required">Cell Phone</label>
+              <input type="tel" id="deliverCell" name="cell" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="deliverAddress" class="form-label required">Home Address</label>
+              <textarea id="deliverAddress" name="address" class="form-textarea" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="availability" class="form-label required">When are you available to deliver?</label>
+              <textarea id="availability" name="availability" class="form-textarea" rows="3" placeholder="e.g., Tuesdays and Thursdays after 5pm, flexible on weekends" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label required">Driver Requirements</label>
+              <div class="form-checkbox-group">
+                <div class="form-checkbox">
+                  <input type="checkbox" id="hasVehicle" name="hasVehicle" required>
+                  <label for="hasVehicle">I have access to a personal vehicle</label>
+                </div>
+                <div class="form-checkbox">
+                  <input type="checkbox" id="hasFuel" name="hasFuel" required>
+                  <label for="hasFuel">I understand I'm responsible for my own fuel costs</label>
+                </div>
+                <div class="form-checkbox">
+                  <input type="checkbox" id="hasInsurance" name="hasInsurance" required>
+                  <label for="hasInsurance">I have valid auto insurance</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-waiver">
+              <p class="waiver-text"><strong>Volunteer Waiver:</strong> I understand and agree that I am volunteering my services to Our Kind Kitchen at my own risk. I release Our Kind Kitchen from any liability for injuries or damages that may occur during my volunteer service.</p>
+              <div class="waiver-checkbox">
+                <input type="checkbox" id="deliverWaiver" name="waiver" required>
+                <label for="deliverWaiver">I have read and agree to the volunteer waiver *</label>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary form-submit">Submit Application</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Group Volunteering Section -->
+  <section id="group" class="section-alt">
+    <div class="container" style="max-width: 1200px;">
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+        <div>
+          <h2>Volunteer as a Group</h2>
+          <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Perfect for Bar/Bat Mitzvah projects, youth groups, school service requirements, or friends who want to volunteer together!</p>
+
+          <h4>Why Group Volunteering?</h4>
+          <ul style="margin: 1rem 0 1.5rem; padding-left: 1.5rem; line-height: 2;">
+            <li>Meaningful hands-on community service</li>
+            <li>Teach compassion and giving back</li>
+            <li>Create lasting memories together</li>
+            <li>Flexible scheduling for your group</li>
+            <li>Age-appropriate tasks for all skill levels</li>
+          </ul>
+
+          <img src="assets/images/photos/589970708_1177259534544135_7844542195920442809_n.jpg" alt="Group volunteering" class="img-rounded" style="width: 100%;">
+        </div>
+
+        <div>
+          <form name="group-volunteer" method="POST" netlify netlify-honeypot="bot-field" class="form">
+            <input type="hidden" name="form-name" value="group-volunteer">
+            <div class="form-honeypot">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </div>
+
+            <div class="form-success" id="groupFormSuccess">
+              <div class="form-success-icon">✓</div>
+              <h3>Thank You!</h3>
+              <p>We've received your group volunteer request.</p>
+            </div>
+
+            <h3>Group Volunteer Application</h3>
+            <p class="form-required-note">* indicates required field</p>
+
+            <div class="form-group">
+              <label for="groupLeaderName" class="form-label required">Group Leader Name</label>
+              <input type="text" id="groupLeaderName" name="leaderName" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="groupEmail" class="form-label required">Email</label>
+              <input type="email" id="groupEmail" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="groupCell" class="form-label required">Cell Phone</label>
+              <input type="tel" id="groupCell" name="cell" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="groupAddress" class="form-label required">Home Address</label>
+              <textarea id="groupAddress" name="address" class="form-textarea" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="groupNumVolunteers" class="form-label required">Number of volunteers in group</label>
+              <input type="number" id="groupNumVolunteers" name="numVolunteers" class="form-input" min="2" required>
+            </div>
+
+            <div class="form-group">
+              <label for="groupVolunteerNames" class="form-label">Names of volunteers</label>
+              <textarea id="groupVolunteerNames" name="volunteerNames" class="form-textarea" rows="4" placeholder="Please list all volunteer names"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="groupReason" class="form-label required">Reason for volunteering</label>
+              <select id="groupReason" name="reason" class="form-select" required>
+                <option value="">Select a reason...</option>
+                <option value="just-because">Just because</option>
+                <option value="bar-bat-mitzvah">Bar/Bat Mitzvah project</option>
+                <option value="community-service">Community service requirement</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="groupSession" class="form-label required">Preferred session</label>
+              <select id="groupSession" name="session" class="form-select" required>
+                <option value="">Select a session...</option>
+                <option value="weekday-morning">Weekday Morning</option>
+                <option value="weekday-afternoon">Weekday Afternoon</option>
+                <option value="weekday-evening">Weekday Evening</option>
+                <option value="weekend">Weekend</option>
+                <option value="flexible">We're Flexible</option>
+              </select>
+            </div>
+
+            <div class="form-waiver">
+              <p class="waiver-text"><strong>Volunteer Waiver:</strong> I understand and agree that all members of our group are volunteering at their own risk. I release Our Kind Kitchen from any liability for injuries or damages.</p>
+              <div class="waiver-checkbox">
+                <input type="checkbox" id="groupWaiver" name="waiver" required>
+                <label for="groupWaiver">I have read and agree to the volunteer waiver on behalf of the group *</label>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary form-submit">Submit Application</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Volunteering Section -->
+  <section id="corporate">
+    <div class="container" style="max-width: 1200px;">
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+        <div>
+          <h2>Corporate Volunteering</h2>
+          <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Transform your next team-building event into meaningful community impact. Our corporate volunteer opportunities strengthen team bonds while serving those in need.</p>
+
+          <h4>Benefits for Your Team:</h4>
+          <ul style="margin: 1rem 0 1.5rem; padding-left: 1.5rem; line-height: 2;">
+            <li>Build team cohesion through shared purpose</li>
+            <li>Enhance corporate social responsibility</li>
+            <li>Boost employee morale and engagement</li>
+            <li>Create lasting impact in the community</li>
+            <li>Flexible scheduling for your team size</li>
+          </ul>
+
+          <div class="card" style="background-color: var(--color-peach); border: none; margin-top: 2rem;">
+            <h4 style="color: var(--color-dark);">Custom Experiences</h4>
+            <p style="color: var(--color-dark); margin: 0;">We can accommodate groups of 5-50 people and customize the experience to fit your team's needs and schedule.</p>
+          </div>
+        </div>
+
+        <div>
+          <form name="corporate-volunteer" method="POST" netlify netlify-honeypot="bot-field" class="form">
+            <input type="hidden" name="form-name" value="corporate-volunteer">
+            <div class="form-honeypot">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </div>
+
+            <div class="form-success" id="corporateFormSuccess">
+              <div class="form-success-icon">✓</div>
+              <h3>Thank You!</h3>
+              <p>We've received your corporate volunteer inquiry.</p>
+            </div>
+
+            <h3>Corporate Volunteer Inquiry</h3>
+            <p class="form-required-note">* indicates required field</p>
+
+            <div class="form-group">
+              <label for="corpLeaderName" class="form-label required">Contact Person Name</label>
+              <input type="text" id="corpLeaderName" name="contactName" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="corpName" class="form-label required">Corporation/Organization Name</label>
+              <input type="text" id="corpName" name="corporationName" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="corpEmail" class="form-label required">Email</label>
+              <input type="email" id="corpEmail" name="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="corpCell" class="form-label required">Phone</label>
+              <input type="tel" id="corpCell" name="phone" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="corpAddress" class="form-label required">Corporation Address</label>
+              <textarea id="corpAddress" name="address" class="form-textarea" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="corpNumVolunteers" class="form-label required">Expected number of participants</label>
+              <input type="number" id="corpNumVolunteers" name="numVolunteers" class="form-input" min="5" required>
+            </div>
+
+            <div class="form-group">
+              <label for="corpParticipantNames" class="form-label">Participant names (if known)</label>
+              <textarea id="corpParticipantNames" name="participantNames" class="form-textarea" rows="4" placeholder="Leave blank if not yet confirmed"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="corpSession" class="form-label required">Preferred timing</label>
+              <select id="corpSession" name="preferredTiming" class="form-select" required>
+                <option value="">Select preferred timing...</option>
+                <option value="weekday-morning">Weekday Morning</option>
+                <option value="weekday-afternoon">Weekday Afternoon</option>
+                <option value="weekday-evening">Weekday Evening</option>
+                <option value="weekend">Weekend</option>
+                <option value="flexible">Flexible - Let's Discuss</option>
+              </select>
+            </div>
+
+            <div class="form-waiver">
+              <p class="waiver-text"><strong>Volunteer Waiver:</strong> I understand and agree that all corporate participants are volunteering at their own risk. I release Our Kind Kitchen from any liability for injuries or damages.</p>
+              <div class="waiver-checkbox">
+                <input type="checkbox" id="corpWaiver" name="waiver" required>
+                <label for="corpWaiver">I have read and agree to the volunteer waiver on behalf of the organization *</label>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary form-submit">Submit Inquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-maroon" style="text-align: center; color: var(--color-white);">
+    <div class="container">
+      <h2 style="color: var(--color-white);">Questions About Volunteering?</h2>
+      <p class="text-lg max-w-700 mb-2">We're here to help you find the perfect volunteer opportunity.</p>
+      <div class="cta-container">
+        <a href="about.html" class="btn btn-outline btn-lg" style="border-color: white; color: white;">Learn More About Us</a>
+        <a href="donate.html" class="btn btn-secondary btn-lg">Support Our Mission</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Component -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

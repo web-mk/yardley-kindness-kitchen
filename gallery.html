@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View photos from Our Kind Kitchen's volunteer cooking sessions, meal preparation, and community events.">
+  <title>Photo Gallery | Our Kind Kitchen</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/gallery.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/our-kind-kitchen_icon-color.png">
+</head>
+<body>
+
+  <!-- Navigation Component -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero hero-overlay hero-gallery">
+    <div class="container">
+      <h1>Photo Gallery</h1>
+      <p>See our volunteers in action, making a difference one meal at a time</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section>
+    <div class="container">
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        <div class="gallery-item" data-index="0">
+          <img src="assets/images/photos/588409364_1177256171211138_2349861352918402751_n.jpg" alt="Volunteers in Our Kind Kitchen">
+        </div>
+        <div class="gallery-item" data-index="1">
+          <img src="assets/images/photos/590762879_1177256714544417_5962521010772245558_n.jpg" alt="Team of volunteers preparing meals">
+        </div>
+        <div class="gallery-item" data-index="2">
+          <img src="assets/images/photos/590463438_1177259134544175_4637725051904358289_n.jpg" alt="Kitchen volunteers at work">
+        </div>
+        <div class="gallery-item" data-index="3">
+          <img src="assets/images/photos/589211666_1177260397877382_4073025688232615726_n.jpg" alt="Volunteers cooking together">
+        </div>
+        <div class="gallery-item" data-index="4">
+          <img src="assets/images/photos/589047143_1177260547877367_5619396953661858355_n.jpg" alt="Happy volunteers in aprons">
+        </div>
+        <div class="gallery-item" data-index="5">
+          <img src="assets/images/photos/589655435_1177260721210683_2176968772835659170_n.jpg" alt="Volunteer with finished baked goods">
+        </div>
+        <div class="gallery-item" data-index="6">
+          <img src="assets/images/photos/589970708_1177259534544135_7844542195920442809_n.jpg" alt="Community event with volunteers">
+        </div>
+        <div class="gallery-item" data-index="7">
+          <img src="assets/images/photos/590893501_1177260494544039_3555072081067432130_n.jpg" alt="Group of volunteers at event">
+        </div>
+        <div class="gallery-item" data-index="8">
+          <img src="assets/images/photos/590764760_1177260677877354_8272275265280234646_n.jpg" alt="Volunteers preparing ingredients">
+        </div>
+        <div class="gallery-item" data-index="9">
+          <img src="assets/images/photos/588754788_1177257537877668_5893911931078623577_n.jpg" alt="Chopping vegetables">
+        </div>
+        <div class="gallery-item" data-index="10">
+          <img src="assets/images/photos/589071065_1177256077877814_3772672395711660958_n.jpg" alt="Hands-on food preparation">
+        </div>
+        <div class="gallery-item" data-index="11">
+          <img src="assets/images/photos/589514058_1177256037877818_4013742133536933384_n.jpg" alt="Preparing ingredients in kitchen">
+        </div>
+        <div class="gallery-item" data-index="12">
+          <img src="assets/images/photos/589210477_1177257561210999_6583424379757085871_n.jpg" alt="Volunteer chopping carrots">
+        </div>
+        <div class="gallery-item" data-index="13">
+          <img src="assets/images/photos/589445759_1177258134544275_4686772530077329416_n.jpg" alt="Finished meals ready for delivery">
+        </div>
+        <div class="gallery-item" data-index="14">
+          <img src="assets/images/photos/589190549_1177256277877794_7459857766814935686_n.jpg" alt="Kitchen prep work">
+        </div>
+        <div class="gallery-item" data-index="15">
+          <img src="assets/images/photos/590418190_1177258767877545_1133803036779581684_n.jpg" alt="Volunteers preparing meals together">
+        </div>
+        <div class="gallery-item" data-index="16">
+          <img src="assets/images/photos/588860024_1177256184544470_2522764375286149243_n.jpg" alt="Food preparation in progress">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section-alt">
+    <div class="container text-center">
+      <h2>Join Us in Making a Difference</h2>
+      <p class="text-lg max-w-700 mb-2">Be part of our mission to serve hope, one meal at a time.</p>
+      <div class="cta-container">
+        <a href="volunteer.html" class="btn btn-primary btn-lg">Volunteer With Us</a>
+        <a href="donate.html" class="btn btn-secondary btn-lg">Support Our Mission</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="closeLightbox" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="prevImage" aria-label="Previous image">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImage">
+    </div>
+    <button class="lightbox-nav lightbox-next" id="nextImage" aria-label="Next image">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Footer Component -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

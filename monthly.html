@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the Souper Stars! Support Our Kind Kitchen with a monthly donation and provide consistent help to neighbors in need.">
+  <title>Souper Stars - Monthly Giving | Our Kind Kitchen</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/our-kind-kitchen_icon-color.png">
+
+  <!-- Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+  <!-- Navigation Component -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Page Hero -->
+  <section class="page-hero hero-overlay hero-monthly">
+    <div class="container">
+      <div style="font-size: 4rem; margin-bottom: 1rem;"><i class="fas fa-star" style="color: var(--color-peach);"></i></div>
+      <h1>Join the Souper Stars</h1>
+      <p>Become a monthly donor and provide consistent support to our community</p>
+    </div>
+  </section>
+
+  <!-- Why Monthly Section -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-lg">
+        <h2>Why Give Monthly?</h2>
+        <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;">Monthly giving provides reliable, sustained support that helps us plan ahead and serve more families.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-calendar-check" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
+          <h3>Predictable Impact</h3>
+          <p>Your recurring gift helps us budget and plan to serve more neighbors consistently</p>
+        </div>
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-hand-holding-heart" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
+          <h3>Convenient Giving</h3>
+          <p>Set it and forget it - automatic donations save you time while maximizing impact</p>
+        </div>
+        <div class="card text-center">
+          <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-trophy" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
+          <h3>Exclusive Updates</h3>
+          <p>Receive special updates about the families you're helping and our impact</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monthly Giving Tiers -->
+  <section class="section-alt">
+    <div class="container" style="max-width: 900px;">
+      <div class="text-center mb-lg">
+        <h2>Choose Your Impact Level</h2>
+        <p style="font-size: 1.125rem;">Select a monthly giving level that's right for you</p>
+      </div>
+
+      <form id="monthlyDonationForm" class="form">
+        <div style="display: grid; gap: 1.5rem;">
+
+          <label class="impact-tier" style="position: relative; cursor: pointer;">
+            <input type="radio" name="tier" value="36" style="position: absolute; opacity: 0;">
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <div style="flex-shrink: 0;">
+                <div class="impact-tier-amount">$36</div>
+                <div class="impact-tier-frequency">/month</div>
+              </div>
+              <div style="flex: 1;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-primary-maroon);">Breakfast Supporter</h3>
+                <p class="impact-tier-description" style="margin: 0;">Provides a nourishing breakfast package each month for a new mom recovering from childbirth</p>
+              </div>
+            </div>
+          </label>
+
+          <label class="impact-tier" style="position: relative; cursor: pointer;">
+            <input type="radio" name="tier" value="72" checked style="position: absolute; opacity: 0;">
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <div style="flex-shrink: 0;">
+                <div class="impact-tier-amount">$72</div>
+                <div class="impact-tier-frequency">/month</div>
+              </div>
+              <div style="flex: 1;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-primary-maroon);">Weekly Meal Provider</h3>
+                <p class="impact-tier-description" style="margin: 0;">Covers a full week of meals for a senior citizen facing loneliness or mobility challenges</p>
+              </div>
+            </div>
+          </label>
+
+          <label class="impact-tier" style="position: relative; cursor: pointer;">
+            <input type="radio" name="tier" value="180" style="position: absolute; opacity: 0;">
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <div style="flex-shrink: 0;">
+                <div class="impact-tier-amount">$180</div>
+                <div class="impact-tier-frequency">/month</div>
+              </div>
+              <div style="flex: 1;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-primary-maroon);">Shabbat Champion</h3>
+                <p class="impact-tier-description" style="margin: 0;">Provides a complete Shabbat meal for a family navigating a medical crisis or difficult season</p>
+              </div>
+            </div>
+          </label>
+
+          <label class="impact-tier" style="position: relative; cursor: pointer;">
+            <input type="radio" name="tier" value="360" style="position: absolute; opacity: 0;">
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <div style="flex-shrink: 0;">
+                <div class="impact-tier-amount">$360</div>
+                <div class="impact-tier-frequency">/month</div>
+              </div>
+              <div style="flex: 1;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-primary-maroon);">Family Sustainer</h3>
+                <p class="impact-tier-description" style="margin: 0;">Supports meals for two families throughout the month, doubling your impact</p>
+              </div>
+            </div>
+          </label>
+
+          <label class="impact-tier" style="position: relative; cursor: pointer;">
+            <input type="radio" name="tier" value="custom" style="position: absolute; opacity: 0;">
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <div style="flex-shrink: 0;">
+                <div class="impact-tier-amount" style="font-size: 1.5rem;">Custom</div>
+                <div class="impact-tier-frequency">/month</div>
+              </div>
+              <div style="flex: 1;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--color-primary-maroon);">Your Amount</h3>
+                <input type="number" id="customMonthlyAmount" class="form-input" min="1" placeholder="Enter monthly amount" style="margin-top: 0.5rem;">
+              </div>
+            </div>
+          </label>
+
+        </div>
+
+        <div class="form-buttons" style="margin-top: 2rem;">
+          <button type="submit" class="btn btn-primary btn-lg form-submit" style="width: 100%;">
+            <i class="fas fa-lock" style="margin-right: 0.5rem;"></i>
+            Start Monthly Giving
+          </button>
+        </div>
+
+        <p class="text-center" style="margin-top: 1rem; font-size: 0.875rem; color: #6B5B50;">
+          <i class="fas fa-shield-alt"></i> Secure monthly donations powered by Stripe<br>
+          Cancel or modify anytime through your donor portal
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section>
+    <div class="container text-center">
+      <h2>Souper Star Benefits</h2>
+      <p style="font-size: 1.125rem; max-width: 800px; margin: 0 auto 3rem;">As a monthly donor, you'll receive special recognition and updates:</p>
+
+      <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
+        <div class="card">
+          <h4><i class="fas fa-envelope-open-text" style="color: var(--color-peach); margin-right: 0.5rem;"></i> Monthly Impact Reports</h4>
+          <p>Receive exclusive updates about how your gifts are making a difference</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-award" style="color: var(--color-peach); margin-right: 0.5rem;"></i> Special Recognition</h4>
+          <p>Be featured on our Souper Stars honor roll (with your permission)</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-gift" style="color: var(--color-peach); margin-right: 0.5rem;"></i> Annual Thank You Event</h4>
+          <p>Invitation to our annual appreciation gathering for Souper Stars</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-hand-sparkles" style="color: var(--color-peach); margin-right: 0.5rem;"></i> Easy Management</h4>
+          <p>Access to your donor portal to update payment or cancel anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tax Deductible -->
+  <section class="section-alt">
+    <div class="container text-center">
+      <div class="card" style="max-width: 700px; margin: 0 auto; background-color: var(--color-cream); border: 2px solid var(--color-peach);">
+        <h3>Tax-Deductible Donation</h3>
+        <p>Our Kind Kitchen is a registered 501(c)(3) non-profit organization. Your monthly donations are tax-deductible.</p>
+        <p style="margin: 0; font-weight: 600;">EIN: 99-3415090</p>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <p style="margin-bottom: 1rem;"><strong>Prefer to make a one-time gift?</strong></p>
+        <a href="donate.html" class="btn btn-outline">Make a One-Time Donation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Component -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/donate.js"></script>
+</body>
+</html>

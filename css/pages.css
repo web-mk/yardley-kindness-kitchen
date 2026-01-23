@@ -1,0 +1,190 @@
+/* Page-Specific Styles for Our Kind Kitchen */
+
+/* Hero Sections */
+.page-hero {
+  padding: 6rem 0;
+  color: var(--color-white);
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section.page-hero h1 {
+  color: var(--color-white);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.page-hero p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Specific hero backgrounds with overlay */
+.hero-about.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/590762879_1177256714544417_5962521010772245558_n.jpg') center/cover no-repeat;
+}
+
+.hero-donate.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/589445759_1177258134544275_4686772530077329416_n.jpg') center/cover no-repeat;
+}
+
+.hero-gallery.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/589211666_1177260397877382_4073025688232615726_n.jpg') center/cover no-repeat;
+}
+
+.hero-request.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/590764760_1177260677877354_8272275265280234646_n.jpg') center/cover no-repeat;
+}
+
+.hero-volunteer.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/588409364_1177256171211138_2349861352918402751_n.jpg') center/cover no-repeat;
+}
+
+.hero-monthly.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/590893501_1177260494544039_3555072081067432130_n.jpg') center/cover no-repeat;
+}
+
+.hero-matching.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/590418190_1177258767877545_1133803036779581684_n.jpg') center/cover no-repeat;
+}
+
+.hero-legacy.hero-overlay {
+  background: linear-gradient(rgba(164, 30, 52, 0.8), rgba(164, 30, 52, 0.8)), url('../assets/images/photos/590764760_1177260677877354_8272275265280234646_n.jpg') center/cover no-repeat;
+}
+
+/* Homepage hero (larger) */
+.hero-home {
+  padding: 8rem 0;
+  background-image: url('../assets/images/photos/589047143_1177260547877367_5619396953661858355_n.jpg');
+  background: linear-gradient(rgba(164, 30, 52, 0.7), rgba(164, 30, 52, 0.7)), url('../assets/images/photos/589047143_1177260547877367_5619396953661858355_n.jpg') center/cover no-repeat;
+}
+
+.hero-home .hero-logo {
+  max-width: 300px;
+  margin: 0 auto 2rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.hero-home h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-home p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Maroon banner section */
+.banner-maroon {
+  background-color: var(--color-primary-maroon);
+  color: var(--color-white);
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.banner-maroon h2 {
+  color: var(--color-white);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.banner-maroon p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Process Steps */
+.process-steps {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-peach);
+  color: var(--color-primary-maroon);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  margin: 0 auto 1rem;
+}
+
+/* Request Meal Page - Two Column */
+.request-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .request-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Volunteer Cards Grid */
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Info Card Styling */
+.info-card {
+  background-color: var(--color-cream);
+  border: 2px solid var(--color-peach);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.info-card-center {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--color-cream);
+  border: 2px solid var(--color-peach);
+}
+
+/* Image with Shadow */
+.img-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+/* Padding Utilities for Sections */
+.section-padding {
+  padding: 4rem 0;
+}
+
+.section-padding-lg {
+  padding: 6rem 0;
+}
+
+/* Custom Input Wrapper */
+.input-with-prefix {
+  position: relative;
+}
+
+.input-with-prefix input {
+  padding-left: 2rem;
+}
