@@ -97,6 +97,19 @@
   user-select: none;
 }
 
+/* Address Fields Row */
+.form-address-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .form-address-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Waiver Checkbox */
 .form-waiver {
   background-color: var(--color-cream);

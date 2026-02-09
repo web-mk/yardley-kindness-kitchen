@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -118,11 +118,11 @@
         <p class="text-center" style="margin-bottom: 2rem;">Please provide this information to your attorney, financial advisor, or estate planner:</p>
 
         <div style="background-color: var(--color-cream); padding: 2rem; border-radius: 12px;">
-          <p><strong>Legal Name:</strong> Our Kind Kitchen</p>
-          <p><strong>Tax ID (EIN):</strong> 99-3415090</p>
-          <p><strong>Status:</strong> 501(c)(3) Non-Profit Organization</p>
-          <p><strong>Location:</strong> Lower Bucks County, Pennsylvania</p>
-          <p style="margin: 0;"><strong>Purpose:</strong> Providing gourmet home-cooked meals to neighbors in need</p>
+          <p><strong>Legal Name:</strong> <span data-org="name"></span></p>
+          <p><strong>Tax ID (EIN):</strong> <span data-org="ein"></span></p>
+          <p><strong>Status:</strong> <span data-org="type"></span></p>
+          <p><strong>Location:</strong> <span data-org="location"></span></p>
+          <p style="margin: 0;"><strong>Purpose:</strong> <span data-org="purpose"></span></p>
         </div>
 
         <p style="margin-top: 2rem; text-align: center; font-style: italic;">We strongly encourage you to consult with your financial advisor, attorney, or tax professional when making planned giving decisions.</p>
@@ -147,6 +147,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript -->
+  <script src="js/site-config.js"></script>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -55,7 +55,7 @@
         <a href="#deliver" class="card" style="text-decoration: none; color: inherit;">
           <div style="width: 80px; height: 80px; background-color: var(--color-peach); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"><i class="fas fa-car" style="font-size: 2rem; color: var(--color-primary-maroon);"></i></div>
           <h3>Deliver For Us</h3>
-          <p>Help deliver meals to neighbors in need across Lower Bucks County</p>
+          <p>Help deliver meals to neighbors in need across the greater Yardley area</p>
         </a>
 
         <a href="#group" class="card" style="text-decoration: none; color: inherit;">
@@ -76,7 +76,7 @@
   <!-- Cook With Us Section -->
   <section id="cook" class="section-alt">
     <div class="container" style="max-width: 1200px;">
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+      <div class="content-layout">
         <div>
           <h2>Cook With Us</h2>
           <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Join our vibrant community of volunteers in the kitchen! Our cooking sessions are a wonderful opportunity to meet new people, learn new recipes, and make a tangible difference in someone's life.</p>
@@ -125,8 +125,23 @@
             </div>
 
             <div class="form-group">
-              <label for="cookAddress" class="form-label required">Home Address</label>
-              <textarea id="cookAddress" name="address" class="form-textarea" rows="3" required></textarea>
+              <label for="cookStreet" class="form-label required">Street Address</label>
+              <input type="text" id="cookStreet" name="street" class="form-input" required>
+            </div>
+
+            <div class="form-address-row">
+              <div class="form-group">
+                <label for="cookCity" class="form-label required">City</label>
+                <input type="text" id="cookCity" name="city" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="cookState" class="form-label required">State</label>
+                <input type="text" id="cookState" name="state" class="form-input" value="PA" required>
+              </div>
+              <div class="form-group">
+                <label for="cookZip" class="form-label required">ZIP Code</label>
+                <input type="text" id="cookZip" name="zip" class="form-input" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+              </div>
             </div>
 
             <div class="form-group">
@@ -171,7 +186,7 @@
   <!-- Deliver For Us Section -->
   <section id="deliver">
     <div class="container" style="max-width: 1200px;">
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+      <div class="content-layout">
         <div>
           <h2>Deliver For Us</h2>
           <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Our delivery volunteers are the bridge between our kitchen and the families we serve. This is a flexible opportunity that typically takes 30-60 minutes.</p>
@@ -225,8 +240,23 @@
             </div>
 
             <div class="form-group">
-              <label for="deliverAddress" class="form-label required">Home Address</label>
-              <textarea id="deliverAddress" name="address" class="form-textarea" rows="3" required></textarea>
+              <label for="deliverStreet" class="form-label required">Street Address</label>
+              <input type="text" id="deliverStreet" name="street" class="form-input" required>
+            </div>
+
+            <div class="form-address-row">
+              <div class="form-group">
+                <label for="deliverCity" class="form-label required">City</label>
+                <input type="text" id="deliverCity" name="city" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="deliverState" class="form-label required">State</label>
+                <input type="text" id="deliverState" name="state" class="form-input" value="PA" required>
+              </div>
+              <div class="form-group">
+                <label for="deliverZip" class="form-label required">ZIP Code</label>
+                <input type="text" id="deliverZip" name="zip" class="form-input" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+              </div>
             </div>
 
             <div class="form-group">
@@ -272,7 +302,7 @@
   <!-- Group Volunteering Section -->
   <section id="group" class="section-alt">
     <div class="container" style="max-width: 1200px;">
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+      <div class="content-layout">
         <div>
           <h2>Volunteer as a Group</h2>
           <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Perfect for Bar/Bat Mitzvah projects, youth groups, school service requirements, or friends who want to volunteer together!</p>
@@ -321,8 +351,23 @@
             </div>
 
             <div class="form-group">
-              <label for="groupAddress" class="form-label required">Home Address</label>
-              <textarea id="groupAddress" name="address" class="form-textarea" rows="3" required></textarea>
+              <label for="groupStreet" class="form-label required">Street Address</label>
+              <input type="text" id="groupStreet" name="street" class="form-input" required>
+            </div>
+
+            <div class="form-address-row">
+              <div class="form-group">
+                <label for="groupCity" class="form-label required">City</label>
+                <input type="text" id="groupCity" name="city" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="groupState" class="form-label required">State</label>
+                <input type="text" id="groupState" name="state" class="form-input" value="PA" required>
+              </div>
+              <div class="form-group">
+                <label for="groupZip" class="form-label required">ZIP Code</label>
+                <input type="text" id="groupZip" name="zip" class="form-input" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+              </div>
             </div>
 
             <div class="form-group">
@@ -378,7 +423,7 @@
   <!-- Corporate Volunteering Section -->
   <section id="corporate">
     <div class="container" style="max-width: 1200px;">
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+      <div class="content-layout">
         <div>
           <h2>Corporate Volunteering</h2>
           <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Transform your next team-building event into meaningful community impact. Our corporate volunteer opportunities strengthen team bonds while serving those in need.</p>
@@ -435,8 +480,23 @@
             </div>
 
             <div class="form-group">
-              <label for="corpAddress" class="form-label required">Corporation Address</label>
-              <textarea id="corpAddress" name="address" class="form-textarea" rows="3" required></textarea>
+              <label for="corpStreet" class="form-label required">Corporation Street Address</label>
+              <input type="text" id="corpStreet" name="street" class="form-input" required>
+            </div>
+
+            <div class="form-address-row">
+              <div class="form-group">
+                <label for="corpCity" class="form-label required">City</label>
+                <input type="text" id="corpCity" name="city" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="corpState" class="form-label required">State</label>
+                <input type="text" id="corpState" name="state" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="corpZip" class="form-label required">ZIP Code</label>
+                <input type="text" id="corpZip" name="zip" class="form-input" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+              </div>
             </div>
 
             <div class="form-group">
@@ -494,6 +554,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript -->
+  <script src="js/site-config.js"></script>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
   <script src="js/forms.js"></script>

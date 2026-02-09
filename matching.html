@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -98,10 +98,10 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
           <div>
             <h4 style="color: var(--color-primary-maroon); margin-bottom: 1rem;">Organization Details</h4>
-            <p><strong>Legal Name:</strong> Our Kind Kitchen</p>
-            <p><strong>EIN:</strong> 99-3415090</p>
-            <p><strong>Organization Type:</strong> 501(c)(3) Non-Profit</p>
-            <p><strong>Location:</strong> Lower Bucks County, PA</p>
+            <p><strong>Legal Name:</strong> <span data-org="name"></span></p>
+            <p><strong>EIN:</strong> <span data-org="ein"></span></p>
+            <p><strong>Organization Type:</strong> <span data-org="type"></span></p>
+            <p><strong>Location:</strong> <span data-org="location"></span></p>
           </div>
           <div>
             <h4 style="color: var(--color-primary-maroon); margin-bottom: 1rem;">Common Match Ratios</h4>
@@ -133,6 +133,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript -->
+  <script src="js/site-config.js"></script>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
 </body>

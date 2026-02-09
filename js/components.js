@@ -3,11 +3,11 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // Load Navigation
-  const navPlaceholder = document.getElementById('nav-placeholder');
+  var navPlaceholder = document.getElementById('nav-placeholder');
   if (navPlaceholder) {
     fetch('components/navigation.html')
-      .then(response => response.text())
-      .then(html => {
+      .then(function(response) { return response.text(); })
+      .then(function(html) {
         navPlaceholder.innerHTML = html;
 
         // Re-initialize navigation after loading
@@ -16,27 +16,76 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set active nav link
         setActiveNavLink();
       })
-      .catch(error => console.error('Error loading navigation:', error));
+      .catch(function(error) { console.error('Error loading navigation:', error); });
   }
 
   // Load Footer
-  const footerPlaceholder = document.getElementById('footer-placeholder');
+  var footerPlaceholder = document.getElementById('footer-placeholder');
   if (footerPlaceholder) {
     fetch('components/footer.html')
-      .then(response => response.text())
-      .then(html => {
+      .then(function(response) { return response.text(); })
+      .then(function(html) {
         footerPlaceholder.innerHTML = html;
+        populateOrgInfo(footerPlaceholder);
       })
-      .catch(error => console.error('Error loading footer:', error));
+      .catch(function(error) { console.error('Error loading footer:', error); });
   }
+
+  // Populate any org info placeholders already in the page
+  populateOrgInfo(document);
 });
+
+// Populate elements with data-org attributes from SiteConfig
+function populateOrgInfo(root) {
+  if (typeof SiteConfig === 'undefined') return;
+
+  var org = SiteConfig.org;
+  var elements = root.querySelectorAll('[data-org]');
+
+  elements.forEach(function(el) {
+    var key = el.getAttribute('data-org');
+
+    switch (key) {
+      case 'tagline':
+        el.textContent = org.tagline;
+        break;
+      case 'address':
+        el.innerHTML = org.street + '<br>' + org.city + ', ' + org.state + ' ' + org.zip;
+        break;
+      case 'fullAddress':
+        el.textContent = SiteConfig.fullAddress;
+        break;
+      case 'serviceArea':
+        el.textContent = org.serviceArea;
+        break;
+      case 'orgDetails':
+        el.innerHTML = '<strong>' + org.name + '</strong><br>' + org.type + '<br>EIN: ' + org.ein;
+        break;
+      case 'name':
+        el.textContent = org.name;
+        break;
+      case 'ein':
+        el.textContent = org.ein;
+        break;
+      case 'type':
+        el.textContent = org.type;
+        break;
+      case 'location':
+        el.textContent = SiteConfig.fullAddress;
+        break;
+      case 'purpose':
+        el.textContent = org.purpose;
+        break;
+    }
+  });
+}
 
 // Initialize navigation functionality
 function initializeNavigation() {
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  const mobileOverlay = document.getElementById('mobileOverlay');
-  const body = document.body;
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  var mobileOverlay = document.getElementById('mobileOverlay');
+  var body = document.body;
 
   if (menuToggle && mainNav && mobileOverlay) {
     // Toggle mobile menu
@@ -56,12 +105,12 @@ function initializeNavigation() {
     });
 
     // Mobile dropdown toggle
-    const dropdownLinks = document.querySelectorAll('.nav-item.has-dropdown > .nav-link');
-    dropdownLinks.forEach(link => {
+    var dropdownLinks = document.querySelectorAll('.nav-item.has-dropdown > .nav-link');
+    dropdownLinks.forEach(function(link) {
       link.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
           e.preventDefault();
-          const parentItem = this.closest('.nav-item');
+          var parentItem = this.closest('.nav-item');
           parentItem.classList.toggle('active');
         }
       });
@@ -79,7 +128,7 @@ function initializeNavigation() {
   }
 
   // Header shadow on scroll
-  const header = document.querySelector('.header');
+  var header = document.querySelector('.header');
   if (header) {
     window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -93,9 +142,9 @@ function initializeNavigation() {
 
 // Set active navigation link based on current page
 function setActiveNavLink() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link').forEach(link => {
-    const linkPage = link.getAttribute('href').split('#')[0];
+  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(function(link) {
+    var linkPage = link.getAttribute('href').split('#')[0];
     if (linkPage === currentPage) {
       link.classList.add('active');
     }

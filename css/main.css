@@ -26,7 +26,7 @@
 
   /* Typography */
   --font-heading: 'Righteous', sans-serif;
-  --font-body: 'Lora', 'Georgia', serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
