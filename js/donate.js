@@ -1,6 +1,3 @@
-// Donation JavaScript for Our Kind Kitchen
-// Handles Stripe checkout for one-time and recurring donations
-
 document.addEventListener('DOMContentLoaded', function() {
   // Show/hide custom amount field
   const amountRadios = document.querySelectorAll('input[name="amount"]');
@@ -18,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Auto-select custom radio when typing in custom amount
   if (customAmountInput) {
     customAmountInput.addEventListener('focus', function() {
       const customRadio = document.querySelector('input[name="amount"][value="custom"]');
@@ -29,7 +25,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Handle donation form submission
+  function redirectToCheckout(amount, mode) {
+    return fetch('/.netlify/functions/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount, mode })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error(data.error || 'No checkout URL returned');
+      }
+    });
+  }
+
+  // One-time donation form
   const donationForm = document.getElementById('donationForm');
   if (donationForm) {
     donationForm.addEventListener('submit', function(e) {
@@ -49,56 +61,20 @@ document.addEventListener('DOMContentLoaded', function() {
         amount = parseFloat(selectedAmount.value);
       }
 
-      // For now, show alert that Stripe integration is needed
-      // In production, this would call your Netlify Function to create a Stripe Checkout session
-      alert(`Stripe integration needed!\n\nYou selected: $${amount}\n\nTo complete this integration:\n1. Set up Stripe account\n2. Add Stripe API keys to Netlify environment variables\n3. Create Netlify Function at functions/create-checkout-session.js\n4. Update this code to call the function\n\nSee README.md for details.`);
+      const submitBtn = donationForm.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Redirecting to checkout...';
 
-      // Production code would look like this:
-      /*
-      fetch('/.netlify/functions/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          amount: amount,
-          currency: 'usd',
-          mode: 'payment'
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.sessionId) {
-          const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY');
-          return stripe.redirectToCheckout({ sessionId: data.sessionId });
-        } else {
-          throw new Error('Failed to create checkout session');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
+      redirectToCheckout(amount, 'payment').catch(error => {
+        console.error('Checkout error:', error);
         alert('There was an error processing your donation. Please try again.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-lock" style="margin-right: 0.5rem;"></i>Proceed to Secure Checkout';
       });
-      */
     });
   }
 
-  // Handle impact tier selection clicks
-  const impactTiers = document.querySelectorAll('.impact-tier');
-  impactTiers.forEach(tier => {
-    tier.addEventListener('click', function() {
-      const radio = this.querySelector('input[type="radio"]');
-      if (radio) {
-        radio.checked = true;
-        // Remove active class from all tiers
-        impactTiers.forEach(t => t.classList.remove('active'));
-        // Add active class to clicked tier
-        this.classList.add('active');
-      }
-    });
-  });
-
-  // Handle monthly donation form (for monthly.html page)
+  // Monthly donation form
   const monthlyForm = document.getElementById('monthlyDonationForm');
   if (monthlyForm) {
     monthlyForm.addEventListener('submit', function(e) {
@@ -117,10 +93,29 @@ document.addEventListener('DOMContentLoaded', function() {
         amount = parseFloat(selectedTier.value);
       }
 
-      // For now, show alert that Stripe integration is needed
-      alert(`Stripe Subscription integration needed!\n\nYou selected: $${amount}/month\n\nTo complete this integration:\n1. Set up Stripe Subscription products\n2. Create price IDs for each tier\n3. Add Stripe API keys to Netlify\n4. Create Netlify Function for subscriptions\n5. Update this code\n\nSee README.md for details.`);
+      const submitBtn = monthlyForm.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Redirecting to checkout...';
 
-      // Production code would create a subscription session
+      redirectToCheckout(amount, 'subscription').catch(error => {
+        console.error('Checkout error:', error);
+        alert('There was an error processing your donation. Please try again.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-lock" style="margin-right: 0.5rem;"></i>Start Monthly Giving';
+      });
     });
   }
+
+  // Handle impact tier selection clicks
+  const impactTiers = document.querySelectorAll('.impact-tier');
+  impactTiers.forEach(tier => {
+    tier.addEventListener('click', function() {
+      const radio = this.querySelector('input[type="radio"]');
+      if (radio) {
+        radio.checked = true;
+        impactTiers.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
 });

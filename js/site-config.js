@@ -1,5 +1,9 @@
 // Single source of truth for organization info
 var SiteConfig = {
+  stripe: {
+    publishableKey: 'pk_live_51SpIpFF9vTsVWggHveXKARB1mtjqbIrvmcdHg3JhMX1txzask5Nj755Z2JmCqbTra7pmjflkr2W5WcDMVtig4W3L00Hc3KAFO7'
+  },
+
   org: {
     name: 'Our Kind Kitchen',
     type: '501(c)(3) Non-Profit',
