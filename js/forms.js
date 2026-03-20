@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString()
       })
+      .then(response => {
+        if (!response.ok) throw new Error('Server error: ' + response.status);
+      })
       .then(() => {
         // Show success message
         form.classList.remove('loading');
