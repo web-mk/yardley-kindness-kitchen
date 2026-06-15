@@ -5,7 +5,8 @@ var SiteConfig = {
   },
 
   org: {
-    name: 'Our Kind Kitchen',
+    name: 'Yardley Kitchen of Kindness',
+    legalName: 'Our Kind Kitchen DBA Yardley Kitchen of Kindness',
     type: '501(c)(3) Non-Profit',
     ein: '99-3415090',
     street: '1237 Edgewood Rd.',

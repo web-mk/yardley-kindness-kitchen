@@ -18,8 +18,8 @@ exports.handler = async (event) => {
       currency: 'usd',
       product_data: {
         name: mode === 'subscription'
-          ? 'Monthly Donation to Our Kind Kitchen'
-          : 'Donation to Our Kind Kitchen',
+          ? 'Monthly Donation to Yardley Kitchen of Kindness'
+          : 'Donation to Yardley Kitchen of Kindness',
         description: 'Supporting gourmet home-cooked meals for neighbors in need',
       },
       unit_amount: Math.round(amount * 100),

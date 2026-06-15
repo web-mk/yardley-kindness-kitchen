@@ -1,4 +1,4 @@
-// Component Loader for Our Kind Kitchen
+// Component Loader for Yardley Kitchen of Kindness
 // Loads navigation and footer components
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -59,7 +59,7 @@ function populateOrgInfo(root) {
         el.textContent = org.serviceArea;
         break;
       case 'orgDetails':
-        el.innerHTML = '<strong>' + org.name + '</strong><br>' + org.type + '<br>EIN: ' + org.ein;
+        el.innerHTML = '<strong>' + (org.legalName || org.name) + '</strong><br>' + org.type + '<br>EIN: ' + org.ein;
         break;
       case 'name':
         el.textContent = org.name;
@@ -132,9 +132,9 @@ function initializeNavigation() {
   if (header) {
     window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
-        header.style.boxShadow = '0 4px 16px rgba(164, 30, 52, 0.15)';
+        header.style.boxShadow = '0 4px 16px rgba(241, 100, 87, 0.15)';
       } else {
-        header.style.boxShadow = '0 2px 8px rgba(164, 30, 52, 0.1)';
+        header.style.boxShadow = '0 2px 8px rgba(241, 100, 87, 0.1)';
       }
     });
   }

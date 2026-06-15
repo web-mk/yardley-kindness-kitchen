@@ -368,7 +368,7 @@
 
 .impact-tier input[type="radio"]:checked ~ .impact-tier {
   border-color: var(--color-primary-maroon);
-  background-color: #FFF5F7;
+  background-color: #FEF1EF;
 }
 
 .impact-tier-amount {
@@ -392,6 +392,6 @@
 
 .impact-tier.active {
   border-color: var(--color-primary-maroon);
-  background-color: #FFF5F7;
+  background-color: #FEF1EF;
   box-shadow: var(--shadow-md);
 }

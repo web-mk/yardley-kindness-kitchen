@@ -1,4 +1,4 @@
-// Gallery JavaScript for Our Kind Kitchen
+// Gallery JavaScript for Yardley Kitchen of Kindness
 
 document.addEventListener('DOMContentLoaded', function() {
   const galleryItems = document.querySelectorAll('.gallery-item');

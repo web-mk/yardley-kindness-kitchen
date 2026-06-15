@@ -1,20 +1,12 @@
-/* Our Kind Kitchen - Main Styles */
-
-/* Font Face */
-@font-face {
-  font-family: 'Righteous';
-  src: url('../assets/fonts/Righteous-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/* Yardley Kitchen of Kindness - Main Styles */
+/* Brand fonts (Bogue + DM Sans) are loaded from cdn.webmk.co/kitchen-of-kindness/css/font.css */
 
 /* CSS Variables - Brand Colors */
 :root {
   /* Brand Colors */
-  --color-primary-maroon: #A41E34;
-  --color-peach: #F4A89A;
-  --color-cream: #FAF8F5;
+  --color-primary-maroon: #F16457;
+  --color-peach: #FAA755;
+  --color-cream: #FBF7E0;
   --color-dark: #2C1810;
   --color-white: #FFFFFF;
 
@@ -25,8 +17,8 @@
   --color-accent: var(--color-peach);
 
   /* Typography */
-  --font-heading: 'Righteous', sans-serif;
-  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Bogue', Georgia, serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -41,9 +33,9 @@
   --radius-lg: 24px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(164, 30, 52, 0.1);
-  --shadow-md: 0 4px 16px rgba(164, 30, 52, 0.15);
-  --shadow-lg: 0 8px 32px rgba(164, 30, 52, 0.2);
+  --shadow-sm: 0 2px 8px rgba(241, 100, 87, 0.1);
+  --shadow-md: 0 4px 16px rgba(241, 100, 87, 0.15);
+  --shadow-lg: 0 8px 32px rgba(241, 100, 87, 0.2);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -152,7 +144,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: #8A1829;
+  background-color: #E04A3C;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   color: var(--color-white);
@@ -165,7 +157,7 @@ a:hover {
 }
 
 .btn-secondary:hover {
-  background-color: #F29981;
+  background-color: #F2933B;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   color: var(--color-dark);

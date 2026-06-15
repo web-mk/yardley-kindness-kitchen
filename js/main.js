@@ -1,4 +1,4 @@
-// Main JavaScript for Our Kind Kitchen
+// Main JavaScript for Yardley Kitchen of Kindness
 
 document.addEventListener('DOMContentLoaded', function() {
   // Smooth scrolling for anchor links
